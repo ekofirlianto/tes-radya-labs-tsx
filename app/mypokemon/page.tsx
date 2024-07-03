@@ -50,7 +50,7 @@ const MyPokemonList: React.FC = () => {
       <ToastContainer />
       <h1 className="text-4xl font-bold mb-4">My Pokemon</h1>
       {pokemonList.length === 0 ? (
-        <p className="text-xl">You haven't saved any Pokemon yet.</p>
+        <p className="text-xl">You havent saved any Pokemon yet.</p>
       ) : (
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {pokemonList.map((pokemon, index) => (
