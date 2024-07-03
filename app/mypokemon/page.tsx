@@ -27,14 +27,14 @@ const MyPokemonList: React.FC = () => {
   }, []);
 
   const handleDeletePokemon = (pokemonName: string) => {
-    // Konfirmasi sebelum menghapus
+    // Confirmation before deletion
     if (window.confirm(`Are you sure you want to delete ${pokemonName}?`)) {
-      // Hapus pokemon dari localStorage
+      // Remove pokemon from localStorage
       const updatedPokemonList = pokemonList.filter(
         (pokemon) => pokemon.name !== pokemonName
       );
 
-      // Simpan kembali ke localStorage
+      // Save back to localStorage
       localStorage.setItem("my-pokemon", JSON.stringify(updatedPokemonList));
 
       // Update state
@@ -80,9 +80,9 @@ const MyPokemonList: React.FC = () => {
                 </p>
                 <p>
                   <Link href={`/pokemonlist/${pokemon.name.toLowerCase()}`}>
-                    <span className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded cursor-pointer">
+                    <a className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded cursor-pointer">
                       View Details
-                    </span>
+                    </a>
                   </Link>
                 </p>
                 <button
@@ -98,9 +98,9 @@ const MyPokemonList: React.FC = () => {
       )}
       <div className="mt-4">
         <Link href="/">
-          <span className="bg-red-500 hover:bg-red-400 text-white font-bold py-2 px-4 rounded cursor-pointer">
+          <a className="bg-red-500 hover:bg-red-400 text-white font-bold py-2 px-4 rounded cursor-pointer">
             Back to Home
-          </span>
+          </a>
         </Link>
       </div>
     </div>
