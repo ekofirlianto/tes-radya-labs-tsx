@@ -86,7 +86,7 @@ const PokemonList: React.FC = () => {
                   onMouseLeave={handleMouseLeave}
                 >
                   <a
-                    href={`pokemonlist/${detail}`}
+                    href={`pokemonlist/${pokemon.name}`}
                     className="text-blue-500 hover:underline flex items-center justify-center relative"
                   >
                     <FontAwesomeIcon

@@ -2,6 +2,8 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 interface Pokemon {
   name: string;
@@ -38,13 +40,14 @@ const MyPokemonList: React.FC = () => {
       // Update state
       setPokemonList(updatedPokemonList);
 
-      // Alert setelah berhasil menghapus
-      window.alert(`Successfully deleted ${pokemonName} from My Pokemon!`);
+      // Toast notification after successful deletion
+      toast.success(`Successfully deleted ${pokemonName} from My Pokemon!`);
     }
   };
 
   return (
     <div className="flex flex-col items-center p-4">
+      <ToastContainer />
       <h1 className="text-4xl font-bold mb-4">My Pokemon</h1>
       {pokemonList.length === 0 ? (
         <p className="text-xl">You haven't saved any Pokemon yet.</p>
